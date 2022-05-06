@@ -174,7 +174,7 @@ def run(
 
             # Stream results
             im0 = annotator.result()
-            cv2.imwrite(r'C:\Users\lenks\Desktop\save\\'+str(time_sync())+'.jpg', im0)
+            # cv2.imwrite(r'C:\Users\lenks\Desktop\save\\'+str(time_sync())+'.jpg', im0)
             if view_img:
                 cv2.imshow(str(p), im0)
                 cv2.waitKey(1)  # 1 millisecond

@@ -333,6 +333,10 @@ class LoadStreams:
             w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
             h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
             print(w, h)
+            print(cv2.CAP_PROP_AUTO_EXPOSURE)
+            cap.set(cv2.CAP_PROP_AUTO_EXPOSURE,0.25)
+            cap.set(cv2.CAP_PROP_EXPOSURE,-14)
+            print(cv2.CAP_PROP_AUTO_EXPOSURE)
             cap.set(cv2.CAP_PROP_FRAME_COUNT,30)
             fps = cap.get(cv2.CAP_PROP_FPS)  # warning: may return 0 or nan
             print(fps)
@@ -367,7 +371,7 @@ class LoadStreams:
                 if success:
                     self.imgs[i] = im[:,400:1480,:]
                     # self.imgs[i] = im
-                    # cv2.imwrite(r'C:\Users\lenks\Desktop\get\\' + str(time.time()) + '.jpg', self.imgs[i])
+                    cv2.imwrite(r'C:\Users\lenks\Desktop\get\\' + str(time.time()) + '.jpg', self.imgs[i])
                     # print(im.shape)
                 else:
                     LOGGER.warning('WARNING: Video stream unresponsive, please check your IP camera connection.')
